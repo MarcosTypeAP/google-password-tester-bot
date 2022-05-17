@@ -18,20 +18,20 @@ from dotenv import load_dotenv
 
 
 class PasswordsManager():
-    def __init__(self, passwords_file_path, logs_file_path):
+    def __init__(self, passwords_file_path):
         self.passwords_file_path = passwords_file_path
-        self.logs_file_path = logs_file_path
         self.lines = open(self.passwords_file_path, 'r').readlines()
         self.passwords_counter = 0
-
-    def log(self, msg):
-        with open(self.logs_file_path, 'a') as fp:
-            fp.write(f'{datetime.now():%m/%d %H:%M:%S} |  {msg}\n')
 
     def update_passwd_file(self, passwd, index):
         self.lines[index] = f'{passwd} 1\n'
         with open(self.passwords_file_path, 'w') as fp:
             fp.writelines(self.lines)
+
+
+def log(msg):
+    with open('logs.txt', 'a') as fp:
+        fp.write(f'{datetime.now():%m/%d %H:%M:%S} |  {msg}\n')
 
 
 class GoogleAccountPasswdTesterBot():
@@ -90,7 +90,7 @@ class GoogleAccountPasswdTesterBot():
     def finded_password(self, pm, passwd):
         with open('result.txt', 'w') as fp:
             fp.write(passwd)
-        pm.log(f'The password was found, it is "{self.current_passwd}"')
+        log(f'The password was found, it is "{self.current_passwd}"')
         print('The password was found.')
         time.sleep(99999999999999999999999999999999)
 
@@ -104,7 +104,7 @@ def main():
 
     passwd_bot = GoogleAccountPasswdTesterBot(GOOGLE_LOGIN_URL, GMAIL)
 
-    pm = PasswordsManager('passwords.txt', 'logs.txt')
+    pm = PasswordsManager('passwords.txt')
 
     for i, line in enumerate(pm.lines):
         pm.passwords_counter += 1
@@ -128,7 +128,7 @@ def main():
                     else:
                         minutes = 1
                         minutes_waited += minutes
-                    pm.log(f'captcha, waiting {minutes}min')
+                    log(f'captcha, waiting {minutes}min')
                     passwd_bot.driver.get(STANDBY_PAGE_URL)
                     time.sleep(minutes * 60)
                     passwd_bot.setup_login()
@@ -148,7 +148,7 @@ def main():
                         passwd,
                         pm.passwords_counter
                     )
-                    pm.log(log)
+                    log(log)
                     error = False
                 else:
                     error = True
