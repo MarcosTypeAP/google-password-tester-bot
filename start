@@ -1,0 +1,10 @@
+#!/bin/bash
+
+while :
+do
+	python3 main.py
+	notify-send -t 99999999 "BOT STOPPED"
+	sleep 5
+	killall chrome
+	sleep 5
+done
