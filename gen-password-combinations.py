@@ -30,9 +30,9 @@ def get_passwd_part_groups(file_name):
 
 
 def main():
-    input_file = 'passwd-params.txt'
+    input_file = sys.argv[1]
     output_file = 'passwords.txt'
-    tested_passwords_files = sys.argv[1:]
+    tested_passwords_files = sys.argv[2:]
     tested_passwds = set()
 
     passwd_part_groups = get_passwd_part_groups(input_file)

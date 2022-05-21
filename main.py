@@ -144,11 +144,11 @@ def main():
                 valid = passwd_bot.passwd_input.get_attribute('aria-invalid')
                 if valid == 'true':
                     pm.update_passwd_file(passwd, i)
-                    log = "'{}' isn't valid - tested: {}".format(
+                    log_msg = "'{}' isn't valid - tested: {}".format(
                         passwd,
                         pm.passwords_counter
                     )
-                    log(log)
+                    log(log_msg)
                     error = False
                 else:
                     error = True
