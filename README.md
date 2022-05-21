@@ -4,7 +4,7 @@ A bot that test a list of given passwords in the google account login page until
 Operation
 ---------
 
-When start the bot, it will :
+When start the bot, it will do the following:
 1. Opens the **google chrome** browser
 2. Goes to **accounts.google.com**
 3. Inserts the **account gmail** and press **Next** button
