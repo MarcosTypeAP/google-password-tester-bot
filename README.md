@@ -97,7 +97,9 @@ If you previously generated other files, you can subtract passwords by adding th
 ###### Get untested passwords
 
 In case of errors, you can get the passwords that were not saved in the log file, getting an output file with the untested passwords.
-To do this, run `python3 get-untested-passwords.py <logs file> <password files>`
+To do this, run `python3 get-untested-passwords.py <logs file> <passwords file>`. 
+
+For this feature, the logs file must only have been used in the given passwords file (One to One).
 
 #### Execute the bot
 
