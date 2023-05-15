@@ -43,6 +43,12 @@ Also `notify-send` if you want to be notified if the bot finishes in case of err
 Usage
 -----
 
+###### Environment variables needed
+```bash
+export CHROME_PATH=/usr/bin/google-chrome  # Replace with your chrome path
+export GMAIL=example@gmail.com  # Replace with the Gmail you want to use
+```
+
 First you need a file containing a list of passwords. It should look like this:
 
 ```plaintext
