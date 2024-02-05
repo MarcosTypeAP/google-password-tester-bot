@@ -1,6 +1,8 @@
 # google-password-tester-bot
 A bot that test a list of given passwords in the google account login page until finds the correct one.
 
+> ⚠️ Old project. Maybe it doesn't work anymore.
+
 Operation
 ---------
 
