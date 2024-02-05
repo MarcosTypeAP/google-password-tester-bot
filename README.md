@@ -60,9 +60,8 @@ password3 0
 The `0` indicates that the password has not been tested yet, otherwise it will be `1`.
 
 #### Generate a file with passwords
-> :warning: I hope you don't need to use this because using the same password with slight modifications on many sites is insecure, don't be ignorant like I was and use long and strong randomly generated passwords and save them in a password manager.
 
-If when you change your password, you only change certain parts, you can generate a file with a list of passwords by combining groups of those  parts you remember.
+You can generate a file with a list of passwords by combining groups of parts that you remember.
 
 ###### Example
 
